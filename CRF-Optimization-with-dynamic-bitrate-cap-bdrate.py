@@ -49,7 +49,7 @@ def calculate_metrics(original_video, compressed_video, vmaf_model_path=None):
     psnr_score = None
     with open(psnr_log_path, 'r') as f:
         content = f.read()
-        match = re.search(r'average:(\s*\d+\.\d+)', content)
+        match = re.search(r'psnr_avg:(\s*\d+\.\d+)', content)
         if match:
             psnr_score = float(match.group(1))
 
